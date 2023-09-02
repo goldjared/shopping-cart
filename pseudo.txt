@@ -1,0 +1,34 @@
+shopping cart project:
+
+home page, some info
+shop page 
+  has items, 
+    each item has price, quantity amount, add to cart button
+      add item, adds item and it's selected quantity to cart, resets shop display qty back to 1.
+checkout page
+  has items in cart, with quantity, total price, 
+  option to remove items from cart
+  option to inc/decr quantity
+  has total sum in bottom
+  note* add item x qty 5 to cart. then add item x qty 2 to cart. checkout page should show item x qty 7
+
+mechanics:
+use react router for SPA.
+nav bar. has links to pages.
+  upon page change, nav bar should remain. main page body should change.
+pages:
+  home(default),
+  shopping,
+  checkout,
+  errorPage
+
+components:
+NavBar
+  links to pages 
+ShopItem
+  img of item,
+  price,
+  quantity,  
+  add to cart btn,     
+
+  
