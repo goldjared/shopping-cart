@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const Checkout= () => {
+const Checkout = () => {
   return (
     <>
       <p>this checkout page</p>

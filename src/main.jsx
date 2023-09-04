@@ -6,7 +6,7 @@ import Shop from "./routes/Shop.jsx";
 import Home from "./routes/Home";
 import Checkout from "./routes/Checkout.jsx";
 import ErrorPage from "./routes/Error";
-import './App.css'
+import "./App.css";
 
 const router = createBrowserRouter([
   {
@@ -14,26 +14,24 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-    path: "/",
-    // index: true,
-    element: <Home />,
+        path: "/",
+        // index: true,
+        element: <Home />,
       },
       {
-    path: "shop",
-    element: <Shop />,
+        path: "shop",
+        element: <Shop />,
       },
       {
-    path: "checkout",
-    element: <Checkout />,
+        path: "checkout",
+        element: <Checkout />,
       },
     ],
-
   },
 ]);
 
-
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-   <RouterProvider router={router} />
-  </React.StrictMode>
+    <RouterProvider router={router} />
+  </React.StrictMode>,
 );
