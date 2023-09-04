@@ -1,11 +1,11 @@
 // import { Link } from "react-router-dom";
-import Root from './routes/Root';
+import Root from "./routes/Root";
 
 const App = () => {
   return (
-   <>
-    <Root></Root>
-   </> 
+    <>
+      <Root></Root>
+    </>
   );
 };
 
