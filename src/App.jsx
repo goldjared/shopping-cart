@@ -1,12 +1,12 @@
-import './App.css'
+// import { Link } from "react-router-dom";
+import Root from './routes/Root';
 
-function App() {
-
+const App = () => {
   return (
-    <>
+   <>
+    <Root></Root>
+   </> 
+  );
+};
 
-    </>
-  )
-}
-
-export default App
+export default App;

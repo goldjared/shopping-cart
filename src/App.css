@@ -1,0 +1,11 @@
+:root {
+  background-color: darkolivegreen;
+}
+
+nav > ul {
+  display: flex;
+  list-style-type: none;
+  gap: 10px;
+  background-color: red;
+  /* flex-direction: row; */
+}
