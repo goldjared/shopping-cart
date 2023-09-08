@@ -1,6 +1,13 @@
 // import { Link } from "react-router-dom";
 import Root from "./routes/Root";
 
+let shoppingCart = {};
+
+function addToCartHandler(data) {
+shoppingCart = {...shoppingCart, data};
+console.log(shoppingCart, 'YO');
+}
+
 const App = () => {
   return (
     <>
@@ -9,4 +16,4 @@ const App = () => {
   );
 };
 
-export default App;
+export { App, addToCartHandler};
