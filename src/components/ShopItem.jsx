@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react"
 
-export default function ShopItem({ itemID, fn }) {
+function ShopItem({ itemID, fn }) {
   const [price, setPrice] = useState(null);
   const [loading, setLoading] = useState(true);
-  // const [quantity, setQuantity] = useState(0);
   const [img, setImg] = useState(null);
   const [itemTitle, setItemTitle] = useState(null);
 
@@ -12,7 +11,7 @@ export default function ShopItem({ itemID, fn }) {
     const fetchShopItem = async () => {
       const response = await fetch(`https://fakestoreapi.com/products/${itemID}`)
       const data = await response.json();
-      console.log(data);
+      // console.log(data);
       setItemTitle(data.title);
       setPrice(data.price);
       setImg(data.image)
@@ -39,3 +38,5 @@ export default function ShopItem({ itemID, fn }) {
     </>
   )
 }
+
+export { ShopItem }
