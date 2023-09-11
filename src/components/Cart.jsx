@@ -1,6 +1,11 @@
 import { getProducts } from "../products";
 let shoppingCart = [];
 
+function removeFromCartHandler(e, index) {
+shoppingCart.splice(index, 1)
+e.target.parentNode.remove();
+}
+
 function addToCartHandler(id, e) {
   e.preventDefault();
   const form = document.forms
