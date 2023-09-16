@@ -1,12 +1,7 @@
-// import { Link } from "react-router-dom";
+import { shopProducts } from "./products";
 import Root from "./routes/Root";
 
-let shoppingCart = {};
-
-function addToCartHandler(data) {
-shoppingCart = {...shoppingCart, data};
-console.log(shoppingCart, 'YO');
-}
+shopProducts(); // generates array of product objects
 
 const App = () => {
   return (
@@ -16,4 +11,4 @@ const App = () => {
   );
 };
 
-export { App, addToCartHandler};
+export { App };
