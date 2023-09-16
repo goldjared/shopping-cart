@@ -1,55 +1,76 @@
-import { getProducts } from "../products";
-let shoppingCart = [];
-
-function removeFromCartHandler(e, index) {
-shoppingCart.splice(index, 1)
-e.target.parentNode.remove();
-}
-
-function addToCartHandler(id, e) {
-  e.preventDefault();
-  const form = document.forms
-  let quantity = Number(form[id-1].firstChild.lastChild.value);
-
-  if(!quantity > 0) quantity = 1;
-
-let search = shoppingCart.find((item) => item.ID === id);
-if(search) {
-  search.quantity += quantity;
-  console.log(shoppingCart);
-  return; 
-}
-let currentProductObj = getProducts(id);
-currentProductObj.quantity = quantity;
-shoppingCart.push(currentProductObj)
-console.log(shoppingCart, 'YO');
-}
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { shoppingCart } from "../cartStorage";
 
 function CartUnitPrice(qty, price) {
-if(qty > 1) {
-  return <>Price: ${qty * price} @ ${price} per unit</>
-} 
-return <>Price: ${price}</>
+  if (qty > 1) {
+    return (
+      <>
+        Price: ${qty * price} @ ${price} per unit
+      </>
+    );
+  }
+  return <>Price: ${price}</>;
+}
+
+function CartFinisher(cartTotal) {
+  // console.log(cartTotal, 'CARTOTAL');
+  if (cartTotal === 0) {
+    return (
+      <>
+        <Link to={`/Shop`}>Cart is empty, click to Shop</Link>.
+      </>
+    );
+  }
+  return (
+    <>
+      Total: ${cartTotal}
+      <Link to={`/Shop`}>Forget anything? Click to Shop</Link>
+    </>
+  );
 }
 
 function ShoppingCart() {
+  const [cartTotal, setCartTotal] = useState(0);
+
+
+  function removeFromCartHandler(id) {
+    const index = shoppingCart.map(item => item.id).indexOf(id);
+    shoppingCart.splice(index, 1);
+    setCartTotal(0);
+  }
+
+  useEffect(() => {
+    let workingTotal = 0;
+    shoppingCart.forEach((item) => {
+      workingTotal +=  item.quantity * item.price;
+    });
+    workingTotal = Math.round(workingTotal * 100) / 100;
+    setCartTotal(workingTotal);
+    }, [cartTotal])
+
+  
+
   return (
     <>
       <div className="cart">
         {shoppingCart.map((item) => (
-          <div key={item.Id} className="cart-item">
+          <div key={item.id} className="cart-item">
             <img src={item.img} width={35} alt="" />
             <div className="cart-item-part">{item.title}</div>
             <div className="cart-item-part">Qty: {item.quantity}</div>
-            <div className="cart-item-part">{CartUnitPrice(item.quantity, item.price)}</div>
-            <button onClick={(e) => removeFromCartHandler(e, item.Id-1)}>Remove</button>
-          {}</div>
-
+            <div className="cart-item-part">
+              {CartUnitPrice(item.quantity, item.price)}
+            </div>
+            <button onClick={() => removeFromCartHandler(item.id)}>
+              Remove
+            </button>
+          </div>
         ))}
+        <div className="cart-total">{CartFinisher(cartTotal)}</div>
       </div>
     </>
-  )
+  );
 }
 
-export { addToCartHandler, ShoppingCart };
-
+export { ShoppingCart };
