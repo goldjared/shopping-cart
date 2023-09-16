@@ -36,6 +36,7 @@ function ShopItem({ itemID, fn }) {
                 id="quantity"
                 max={99}
                 min={1}
+                defaultValue={1}
               />
             </label>
             <input
