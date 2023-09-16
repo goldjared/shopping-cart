@@ -24,26 +24,28 @@ function ShopItem({ itemID, fn }) {
     <>
       <div className="shop-item">
         <img src={img} alt="" />
-        <div className="item-title">{itemTitle}</div>
-        <div className="item-price">${price}</div>
-        <form>
-          <label>
-            quantity:
+        <div className="right-shop-item">
+          <div className="item-title">{itemTitle}</div>
+          <div className="item-price">${price}</div>
+          <form>
+            <label>
+              quantity:
+              <input
+                type="number"
+                name="quantity"
+                id="quantity"
+                max={99}
+                min={1}
+              />
+            </label>
             <input
-              type="number"
-              name="quantity"
-              id="quantity"
-              max={99}
-              min={1}
+              type="submit"
+              onClick={fn}
+              className="add-cart-btn"
+              value="Add"
             />
-          </label>
-          <input
-            type="submit"
-            onClick={fn}
-            className="add-cart-btn"
-            value="Add"
-          />
-        </form>
+          </form>
+        </div>
       </div>
     </>
   );
