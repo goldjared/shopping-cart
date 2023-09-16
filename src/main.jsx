@@ -1,13 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-// import Root from "./routes/Root";
 import { Shop } from "./routes/Shop.jsx";
 import Home from "./routes/Home";
-import Checkout from "./routes/Checkout.jsx";
 import ErrorPage from "./routes/Error";
 import "./App.css";
 import { App } from "./App.jsx";
+import ViewCart from "./routes/ViewCart.jsx";
 
 const router = createBrowserRouter([
   {
@@ -24,8 +23,8 @@ const router = createBrowserRouter([
         element: <Shop />,
       },
       {
-        path: "checkout",
-        element: <Checkout />,
+        path: "cart",
+        element: <ViewCart />,
       },
     ],
   },
