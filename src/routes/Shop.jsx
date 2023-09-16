@@ -1,7 +1,6 @@
 import { ShopItem } from "../components/ShopItem";
 import { addToCartHandler } from "../cartStorage";
-
-const shopItemIDs = [1, 2, 3];
+import { shopItemIDs } from "../products";
 
 const Shop = () => {
   return (
