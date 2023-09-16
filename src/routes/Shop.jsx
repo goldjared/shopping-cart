@@ -1,17 +1,19 @@
-import { addToCartHandler } from "../App";
 import { ShopItem } from "../components/ShopItem";
+import { addToCartHandler } from "../cartStorage";
 
-const shopItemIDs = [1, 2, 3, 4,5,6,7,8,9,10];
-// const fetchedAlready = false;
+const shopItemIDs = [1, 2, 3];
 
 const Shop = () => {
-
   return (
     <>
       <p>this store page</p>
       <div className="my-shop">
         {shopItemIDs.map((item) => (
-          <ShopItem itemID={item} fn={() => addToCartHandler(item)} key={item}></ShopItem>
+          <ShopItem
+            itemID={item}
+            fn={(e) => addToCartHandler(item, e)}
+            key={item}
+          ></ShopItem>
         ))}
       </div>
     </>
