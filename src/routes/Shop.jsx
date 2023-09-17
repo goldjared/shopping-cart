@@ -1,6 +1,7 @@
 import { ShopItem } from "../components/ShopItem";
 import { addToCartHandler } from "../cartStorage";
 import { shopItemIDs } from "../products";
+import { Link } from "react-router-dom";
 
 const Shop = () => {
   return (
@@ -14,6 +15,8 @@ const Shop = () => {
             key={item}
           ></ShopItem>
         ))}
+      
+      <Link className='shopping-link' to={`/cart`}>Go to Cart? Click Here.</Link>
       </div>
     </>
   );
