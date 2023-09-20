@@ -29,7 +29,7 @@ function ShopItem({ itemID, fn }) {
           <div className="item-price">${price}</div>
           <form>
             <label>
-              quantity:
+              Quantity:
               <input
                 type="number"
                 name="quantity"
