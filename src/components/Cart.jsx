@@ -13,19 +13,25 @@ function CartUnitPrice(qty, price) {
   return <>Price: ${price}</>;
 }
 
+function FakeCheckOutBtn(cartTotal) {
+  if (cartTotal > 0) {
+    return <button className="display-btn">Fake Checkout</button>;
+  }
+}
+
 function CartFinisher(cartTotal) {
   // console.log(cartTotal, 'CARTOTAL');
   if (cartTotal === 0) {
     return (
       <>
-        <Link to={`/Shop`}>Cart is empty, click to Shop</Link>.
+        <Link to={`/shop`}>Cart is empty, click to Shop</Link>.
       </>
     );
   }
   return (
     <>
       Total: ${cartTotal}
-      <Link to={`/Shop`}>Forget anything? Click to Shop</Link>
+      <Link to={`/shop`}>Forget anything? Click to Shop</Link>
     </>
   );
 }
@@ -33,9 +39,8 @@ function CartFinisher(cartTotal) {
 function ShoppingCart() {
   const [cartTotal, setCartTotal] = useState(0);
 
-
   function removeFromCartHandler(id) {
-    const index = shoppingCart.map(item => item.id).indexOf(id);
+    const index = shoppingCart.map((item) => item.id).indexOf(id);
     shoppingCart.splice(index, 1);
     setCartTotal(0);
   }
@@ -43,13 +48,11 @@ function ShoppingCart() {
   useEffect(() => {
     let workingTotal = 0;
     shoppingCart.forEach((item) => {
-      workingTotal +=  item.quantity * item.price;
+      workingTotal += item.quantity * item.price;
     });
     workingTotal = Math.round(workingTotal * 100) / 100;
     setCartTotal(workingTotal);
-    }, [cartTotal])
-
-  
+  }, [cartTotal]);
 
   return (
     <>
@@ -69,6 +72,7 @@ function ShoppingCart() {
         ))}
         <div className="cart-total">{CartFinisher(cartTotal)}</div>
       </div>
+      {FakeCheckOutBtn(cartTotal)}
     </>
   );
 }
