@@ -15,8 +15,10 @@ const Shop = () => {
             key={item}
           ></ShopItem>
         ))}
-      
-      <Link className='shopping-link' to={`/cart`}>Go to Cart? Click Here.</Link>
+
+        <Link className="shopping-link" to={`/cart`}>
+          Go to Cart? Click Here.
+        </Link>
       </div>
     </>
   );

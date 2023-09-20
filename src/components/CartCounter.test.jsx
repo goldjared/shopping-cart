@@ -5,18 +5,16 @@ import { shoppingCart } from "../cartStorage";
 
 describe("CartCounter", () => {
   it("renders CartCounter component is 0", () => {
-    render(<CartCounter />)
+    render(<CartCounter />);
 
-    expect(screen.getByText('0'));
+    expect(screen.getByText("0"));
   });
-  
+
   it("renders CartCounter component is 1", () => {
     // shopProducts();
-    shoppingCart.push({quantity: 1});
-    render(<CartCounter />)
+    shoppingCart.push({ quantity: 1 });
+    render(<CartCounter />);
 
-    expect(screen.getByText('1'));
+    expect(screen.getByText("1"));
   });
 });
-
-
