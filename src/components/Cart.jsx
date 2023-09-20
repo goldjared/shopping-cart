@@ -6,7 +6,7 @@ function CartUnitPrice(qty, price) {
   if (qty > 1) {
     return (
       <>
-        Price: ${qty * price} @ ${price} per unit
+        Price: ${Math.round(qty * price * 100) / 100} @ ${price} per unit
       </>
     );
   }
@@ -30,7 +30,7 @@ function CartFinisher(cartTotal) {
   }
   return (
     <>
-      Total: ${cartTotal}
+      <div className="cart-total-price">Total: ${cartTotal}</div>
       <Link to={`/shop`}>Forget anything? Click to Shop</Link>
     </>
   );
