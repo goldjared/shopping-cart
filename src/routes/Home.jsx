@@ -21,6 +21,7 @@ const Home = () => {
           velit? Minima, sed cum id quasi odio sunt.
         </p>
       </div>
+      <a  id="photo-credit" href="https://www.pexels.com/photo/art-abstract-moon-design-18423422/">Photo by Natalie Dmay</a>
     </>
   );
 };

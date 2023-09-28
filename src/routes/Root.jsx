@@ -19,7 +19,6 @@ export default function Root() {
       <div id="detail">
         <Outlet />
       </div>
-       <a  id="photo-credit" href="https://www.pexels.com/photo/art-abstract-moon-design-18423422/">Photo by Natalie Dmay</a>
     </>
     
   );
