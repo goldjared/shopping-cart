@@ -24,7 +24,7 @@ function CartFinisher(cartTotal) {
   if (cartTotal < 0.01) {
     return (
       <>
-        <Link to={`/shop`}>Cart is empty, click to Shop</Link>.
+        <Link to={`/shop`}>Cart is empty, click to Shop</Link>
       </>
     );
   }

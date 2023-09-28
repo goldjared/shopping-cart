@@ -1,5 +1,5 @@
 :root {
-  background-color: rgb(233, 233, 233);
+  background-color: #575a5c;
 }
 
 * {
@@ -8,11 +8,11 @@
 }
 
 p, h1 {
-  color: rgb(59, 59, 59);
+  color: #e3e0db;
 }
 
 a {
-  color: rgb(59, 59, 59);
+  color: #e3e0db;
   font-weight: bold;
 }
 
@@ -28,6 +28,7 @@ h1 {
 
 .page-text {
   max-width: 500px;
+  border-bottom: 3px solid black;
 }
 
 nav {
@@ -52,7 +53,7 @@ nav > ul {
   list-style-type: none;
   align-items: center;
   gap: 10px;
-  background-color: rgb(255, 255, 255);
+  /* background-color: rgb(255, 255, 255); */
   width: auto;
   height: 50px;
   /* flex-direction: row; */
@@ -65,7 +66,7 @@ nav > ul {
 }
 
 .shop-item {
-  background-color: rgb(226, 226, 226);
+  background-color: rgb(158, 158, 158);
   border-radius: 5px;
   padding: 5px;
   max-width: 300px;
@@ -87,7 +88,11 @@ img {
 .add-cart-btn {
   max-width: 50px;
   background-color: rgb(251, 255, 251);
-  color: red;
+  color: rgb(170, 27, 27);
+}
+
+.cart-total > a {
+  color: rgb(49, 49, 49);
 }
 
 .add-cart-btn:hover {
@@ -97,6 +102,7 @@ img {
 #photo-credit {
   display: block;
   text-align: center;
+  margin-top: 150px;
   
 }
 
