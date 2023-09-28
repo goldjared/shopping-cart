@@ -94,6 +94,12 @@ img {
   background-color: aquamarine;
 }
 
+#photo-credit {
+  display: block;
+  text-align: center;
+  
+}
+
 .fake-store-img {
   border-radius: 8px;
   background-color: rgb(104, 104, 104);
