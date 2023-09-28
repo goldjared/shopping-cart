@@ -21,7 +21,7 @@ function FakeCheckOutBtn(cartTotal) {
 
 function CartFinisher(cartTotal) {
   // console.log(cartTotal, 'CARTOTAL');
-  if (cartTotal === 0) {
+  if (cartTotal < 0.01) {
     return (
       <>
         <Link to={`/shop`}>Cart is empty, click to Shop</Link>.
@@ -51,7 +51,7 @@ function ShoppingCart() {
       workingTotal += item.quantity * item.price;
     });
     workingTotal = Math.round(workingTotal * 100) / 100;
-    setCartTotal(workingTotal);
+    setCartTotal(workingTotal.toFixed(2));
   }, [cartTotal]);
 
   return (
