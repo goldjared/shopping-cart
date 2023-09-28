@@ -11,7 +11,7 @@ function ShopItem({ itemID, fn }) {
     const fetchShopItem = async () => {
       const data = await getProducts(itemID);
       setItemTitle(data.title);
-      setPrice(data.price);
+      setPrice(data.price.toFixed(2));
       setImg(data.img);
       setLoading(false);
     };
