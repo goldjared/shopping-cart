@@ -1,5 +1,5 @@
 let products = [];
-const shopItemIDs = [1, 2, 3, 4, 5];
+const shopItemIDs = [1, 2, 3, 4, 5, 6];
 
 // const timer = ms => new Promise(res => setTimeout(res, ms))
 // shopProducts();
