@@ -94,6 +94,16 @@ img {
   background-color: aquamarine;
 }
 
+.fake-store-img {
+  border-radius: 8px;
+  background-color: rgb(104, 104, 104);
+  padding: 4px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
 .add-cart-btn:active {
   background-color: rgb(112, 112, 112);
 }
