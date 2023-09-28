@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const Shop = () => {
   return (
     <>
-      <p>this store page</p>
+      <p>Store page! Buy stuff.</p>
       <div className="my-shop">
         {shopItemIDs.map((item) => (
           <ShopItem
