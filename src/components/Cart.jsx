@@ -6,11 +6,11 @@ function CartUnitPrice(qty, price) {
   if (qty > 1) {
     return (
       <>
-        Price: ${Math.round(qty * price * 100) / 100} @ ${price} per unit
+        Price: ${(price * qty).toFixed(2)} @ ${price.toFixed(2)} per unit
       </>
     );
   }
-  return <>Price: ${price}</>;
+  return <>Price: ${price.toFixed(2)}</>;
 }
 
 function FakeCheckOutBtn(cartTotal) {
