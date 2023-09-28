@@ -90,8 +90,12 @@ img {
   color: red;
 }
 
+.add-cart-btn:hover {
+  background-color: aquamarine;
+}
+
 .add-cart-btn:active {
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(112, 112, 112);
 }
 
 #quantity {
