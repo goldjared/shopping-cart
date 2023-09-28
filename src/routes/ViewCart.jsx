@@ -3,7 +3,7 @@ import { ShoppingCart } from "../components/Cart";
 const ViewCart = () => {
   return (
     <>
-      <p>this cart page</p>
+      <p>Cart page! Pretend to checkout stuff.</p>
       <ShoppingCart />
     </>
   );
